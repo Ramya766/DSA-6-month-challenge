@@ -1,0 +1,53 @@
+public class Main
+{
+	public static int first(int arr[],int n,int k) {
+		int first=-1;
+		int low=0;
+		int high=n-1;
+		while(low<=high) {
+			int mid=(low+high)/2;
+			if(arr[mid]==k) {
+				first=mid;
+				high=mid-1;
+			}
+			else if(arr[mid]<k) {
+				low=mid+1;
+			}
+			else
+				high=mid-1;
+		}
+		return first;
+
+
+	}
+	public static int last(int arr[],int n,int k) {
+		int last=-1;
+		int low=0;
+		int high=n-1;
+		while(low<=high) {
+			int mid=(low+high)/2;
+			if(arr[mid]==k) {
+				last=mid;
+				low=mid+1;
+			}
+			else if(arr[mid]<k) {
+				low=mid+1;
+			}
+			else {
+				high=mid-1;
+			}
+		}
+		return last;
+
+	}
+
+	public static void main(String[] args) {
+		int arr[]= {2,8,8,8,8,8,8,11,13};
+		int n=9;
+		int k=8;
+		int firstocc=first(arr,n,k);
+		int lastocc=last(arr,n,k);
+		System.out.print("{"+firstocc+" "+lastocc+"}");
+		System.out.println("\n"+ (lastocc-firstocc+1));
+	}
+}
