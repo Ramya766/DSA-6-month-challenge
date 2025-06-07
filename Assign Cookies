@@ -1,0 +1,23 @@
+Greedy approach:
+import java.util.Arrays;
+public class Main {
+	public static void main(String[] args) {
+		int []greed= {1, 2, 3};
+		int[] cookies= {1, 1};
+		Arrays.sort(greed);
+		Arrays.sort(cookies);
+		int n=greed.length;
+		int m=cookies.length;
+		int l=0;
+		int r=0;
+		while(l<m&&r<n) {
+			if(greed[r]<=cookies[l]) {
+				r=r+1;
+			}
+			l=l+1;
+		}
+		System.out.print(r);
+	}
+}
+TC=O(nlogn+mlogm+m
+SC=O(1)
