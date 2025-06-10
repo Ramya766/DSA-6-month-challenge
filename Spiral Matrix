@@ -1,0 +1,46 @@
+public class Main {
+	public static void spiral(int [][]matrix) {
+		int rowbeg=0;
+		int colbeg=0;
+		int rowend=matrix.length-1;
+		int colend=matrix[0].length-1;
+		while(rowbeg<=rowend && colbeg<=colend) {
+			for(int j=colbeg; j<=colend; j++) {
+				System.out.print(matrix[rowbeg][j]+" ");
+			}
+			rowbeg++;
+			for(int i=rowbeg; i<=rowend; i++) {
+				System.out.print(matrix[i][colend]+" ");
+			}
+			colend--;
+			if(rowbeg<=rowend) {
+				for(int j=colend; j>=colbeg; j--) {
+					System.out.print(matrix[rowend][j]+" ");
+				}
+			}
+			rowend--;
+			if(colbeg<=colend) {
+				for(int i=rowend; i>=rowbeg; i--) {
+					System.out.print(matrix[i][colbeg]+" ");
+				}
+				colbeg++;
+
+
+			}
+
+		}
+	}
+	public static void main(String[] args) {
+		int [][]matrix= 
+		{
+		    {1,2,3,4},
+		{5,6,7,8},
+		{9,10,11,12},
+		{13,14,15,16}
+	};
+		spiral(matrix);
+	}
+}
+
+TC=O(m*n)
+SC=O(1)
