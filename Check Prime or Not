@@ -1,0 +1,22 @@
+Brute:
+public class Main{
+    public static void main(String[] args){
+        int n=37;
+        int c=0;
+        for(int i=1;i<=n;i++){
+            if(n%i==0){
+                c+=1;
+            }
+        }
+        if(c==2){
+            System.out.print("yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
+TC=O(N)
+Sc=O(1)
+
+Optimal
