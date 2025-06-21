@@ -1,0 +1,48 @@
+Brute Force:
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		int arr[]={1,2,3,4};
+		int n=arr.length;
+		boolean res=duplic(arr,n);
+		System.out.print(res);
+		
+	}
+	public static boolean duplic(int arr[],int n){
+		for(int i=0;i<n;i++){
+		    for(int j=i+1;j<n;j++){
+		        if(arr[i]==arr[j]){
+		            return true;
+		        }
+		        
+		    }
+		}
+		return false;
+		}
+}
+
+TC:O(n²)	
+SC:O(1)
+
+Optimal:Two pointer
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n=nums.length;
+        int i=0;
+        int j=1;
+        while(j<n){
+            if(nums[i]==nums[j]){
+                return true;
+            }
+            i++;
+            j++;
+        }
+        return false;
+        
+    }
+}
+TC:O(n log n)
+SC:O(1)
