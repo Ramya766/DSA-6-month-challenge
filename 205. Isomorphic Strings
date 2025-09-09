@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        Map<Character,Character>CharMapping=new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            char org=s.charAt(i);
+            char replace=t.charAt(i);
+            if(!CharMapping.containsKey(org)){
+                if(!CharMapping.containsValue(replace)){
+                    CharMapping.put(org,replace);
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                char mappedchar=CharMapping.get(org);
+                if(mappedchar!=replace){
+                    return false;
+                }
+            }
+        }
+        return true;
+        
+        
+    }
+}
+
+TC:O(n)
+sc=O(1)
