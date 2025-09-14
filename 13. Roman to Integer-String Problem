@@ -1,0 +1,26 @@
+optimal Sol:Using HashMap
+class Solution {
+    public int romanToInt(String s) {
+        HashMap<Character,Integer> Store=new HashMap<>();
+        Store.put('I',1);
+        Store.put('V',5);
+        Store.put('X',10);
+        Store.put('L',50);
+        Store.put('C',100);
+        Store.put('D',500);
+        Store.put('M',1000);
+        int res=Store.get(s.charAt(s.length()-1));
+        for(int i=s.length()-2;i>=0;i--){
+            if(Store.get(s.charAt(i))<Store.get(s.charAt(i+1))){
+                 res=res-Store.get(s.charAt(i));
+            }
+            else{
+                res=res+Store.get(s.charAt(i));
+            }
+           
+        }
+        return res;
+
+
+    }
+}
