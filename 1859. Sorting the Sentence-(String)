@@ -1,0 +1,20 @@
+class Solution {
+    public String sortSentence(String s) {
+        Map<Integer,String> indexword=new HashMap<>();
+        for(String word:s.split(" ")){
+            int lastIndex=word.length()-1;
+            int index=word.charAt(lastIndex)-'0';
+            String actualWord=word.substring(0,lastIndex);
+            indexword.put(index,actualWord);
+        }
+        StringBuilder sb=new StringBuilder();
+        for(Map.Entry<Integer,String> indexWord:indexword.entrySet()){
+            sb.append(indexWord.getValue());
+            sb.append(" ");
+        }
+        return sb.toString().trim();
+    }
+}
+
+Tc:O(n)
+SC=O(n)
