@@ -20,7 +20,7 @@ class Solution {
                 if(mappedchar!=replace){
                     return false;
                 }
-            }
+            } //I don't understand this part!!
         }
         return true;
         
