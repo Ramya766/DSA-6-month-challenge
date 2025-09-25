@@ -20,7 +20,7 @@ class Solution {
                 if(mappedchar!=replace){
                     return false;
                 }
-            } //I don't understand this part!!
+            } //I don't understand this part!! --> I understood the logic but i don't know how it is being converted into code.
         }
         return true;
         
